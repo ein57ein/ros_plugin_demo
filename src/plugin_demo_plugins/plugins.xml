@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<library path="lib/lib_direct">
+  <class type="plugin_demo_plugins_namespace::Direct" base_class_type="plugin_demo_interface_namespace::PathPlanner">
+    <description>
+      This is a direct path planner.
+    </description>
+  </class>
+</library>
+
+<library path="lib/lib_direct_ortho">
+  <class type="plugin_demo_plugins_namespace::DirectOrtho" base_class_type="plugin_demo_interface_namespace::PathPlanner">
+    <description>
+      This is a direct orthogonal path planner.
+    </description>
+  </class>
+</library>

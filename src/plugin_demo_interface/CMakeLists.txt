@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(plugin_demo)
+project(plugin_demo_interface)
 
 set(CMAKE_BUILD_TYPE Debug) #-g
 #set(CMAKE_BUILD_TYPE RelWithDebInfo) #-O2 -g
@@ -8,10 +8,10 @@ set(CMAKE_BUILD_TYPE Debug) #-g
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  message_generation
   pluginlib
   roscpp
-  std_msgs
+  tf
+  #std_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -84,9 +84,9 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES plugin_demo
-#  CATKIN_DEPENDS message_generation pluginlib roscpp std_msgs
+  INCLUDE_DIRS include
+  LIBRARIES _interface
+  CATKIN_DEPENDS pluginlib #std_msgs roscpp
 #  DEPENDS system_lib
 )
 
@@ -106,6 +106,7 @@ include_directories(
 # add_library(plugin_demo
 #   src/${PROJECT_NAME}/plugin_demo.cpp
 # )
+add_library(_interface src/path_planner.cpp)
 
 ## Declare a cpp executable
 # add_executable(plugin_demo_node src/plugin_demo_node.cpp)
@@ -118,6 +119,7 @@ include_directories(
 # target_link_libraries(plugin_demo_node
 #   ${catkin_LIBRARIES}
 # )
+target_link_libraries(_interface ${catkin_LIBRARIES})
 
 #############
 ## Install ##
