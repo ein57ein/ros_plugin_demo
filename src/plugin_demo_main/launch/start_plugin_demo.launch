@@ -3,8 +3,10 @@
 <launch>
 	 
 	<node name="plugin_demo" pkg="plugin_demo_main" type="plugin_demo_path_planner" output="screen">
-		<param name="path_planner_plugin" value="plugin_demo_plugins_namespace::DirectOrtho"/>
+		<param name="plugin" value="plugin_demo_plugins_namespace::DirectOrtho"/>
 		<!--rosparam param="robots">[[barney]]</rosparam-->
 	</node>
+
+	<node name="pose_array_from_path" pkg="visual_aids" type="pose_array_from_path" output="screen"/>
 	
 </launch>

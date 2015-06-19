@@ -36,6 +36,9 @@ namespace plugin_demo_interface_namespace
 	public:
 		int initialize(ros::NodeHandle roshandle);
 		double getYawFromQuat(geometry_msgs::Quaternion quat);
+
+		int setPoints(geometry_msgs::Pose2D *start, geometry_msgs::Pose2D *target);
+		int getPoints(geometry_msgs::Pose2D *start, geometry_msgs::Pose2D *target);
 		
 		virtual ~PathPlanner() {}
 	};

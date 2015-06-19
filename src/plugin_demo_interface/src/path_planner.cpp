@@ -17,7 +17,7 @@ namespace plugin_demo_interface_namespace
 			pathPub = roshandle.advertise<nav_msgs::Path>("path", 10);
 			sendPath = roshandle.createTimer(ros::Rate(1.0), &PathPlanner::sendPathCallback, this);
 
-			setPose2d(&start, 0.50, 0.10, 0.0);
+			setPose2d(&start, 0, 0, 0);
 			target = start;
 			target.header.stamp = ros::Time::now();
 
@@ -46,6 +46,30 @@ namespace plugin_demo_interface_namespace
 		pose3d->pose.orientation.y = 0;
 		pose3d->pose.orientation.z = sin(theta * 0.5);			
 		pose3d->pose.orientation.w = cos(theta * 0.5);
+	}
+
+	int PathPlanner::setPoints(geometry_msgs::Pose2D *start, geometry_msgs::Pose2D *target)
+	{
+		setPose2d( &(this->start), start->x, start->y, start->theta);
+		setPose2d( &(this->target), target->x, target->y, target->theta);
+
+		current_path.poses.clear();
+		getPath();
+
+		return 0;
+	}
+
+	int PathPlanner::getPoints(geometry_msgs::Pose2D *start, geometry_msgs::Pose2D *target)
+	{
+		start->x = this->start.pose.position.x;
+		start->y = this->start.pose.position.y;
+		start->theta = getYawFromQuat(this->start.pose.orientation);
+
+		target->x = this->target.pose.position.x;
+		target->y = this->target.pose.position.y;
+		target->theta = getYawFromQuat(this->target.pose.orientation);
+
+		return 0;
 	}
 
 	double PathPlanner::getYawFromQuat(geometry_msgs::Quaternion quat)
