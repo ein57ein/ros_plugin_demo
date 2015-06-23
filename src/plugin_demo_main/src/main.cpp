@@ -100,6 +100,8 @@ int main(int argc, char **argv)
 		}
 		ros::spinOnce();
 	}
+
+	plugin_node.reset();
 	
 	return 0;
 }
