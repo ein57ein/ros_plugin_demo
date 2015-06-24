@@ -1,3 +1,7 @@
+/** \file path_planner.cpp
+ * Source for the \link plugin_demo_interface_namespace::PathPlanner Interface \endlink class.
+ * Author : Martin Seidel
+ **/
 #include "plugin_demo_interface/path_planner.hpp"
 
 namespace plugin_demo_interface_namespace
@@ -36,7 +40,7 @@ namespace plugin_demo_interface_namespace
 		ROS_INFO("[interface] plugIn has no onInit function");
 	}
 
-	int PathPlanner::setPose2d(geometry_msgs::PoseStamped *pose3d, double x, double y, double theta)
+	void PathPlanner::setPose2d(geometry_msgs::PoseStamped *pose3d, double x, double y, double theta)
 	{
 		pose3d->header.stamp = ros::Time::now();
 		pose3d->pose.position.x = x;
