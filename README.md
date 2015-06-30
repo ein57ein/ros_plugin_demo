@@ -7,6 +7,8 @@ This project is devided into three ROS-packages:
 
 The [visual_aids](https://github.com/ein57ein/ros_plugin_demo/tree/master/src/visual_aids "visual_aids") package include a tool which helps to show the orientation of points from a path using a PoseArray.
 
+There is also a more comprehensive [documentation](http://ein57ein.github.io/ros_plugin_demo/ "doxyGenDoc") available.
+
 ##The basic communication between the _plugin_demo_ packages:
 
 ![Sometimes you can see an image of the basic communication structure](https://github.com/ein57ein/ros_plugin_demo/blob/master/communication.png "basic communication structure")
