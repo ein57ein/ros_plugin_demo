@@ -1,0 +1,29 @@
+/** \mainpage Demonstration of the ROS PlugInLib
+
+The Source Code could be found on [GitHub](https://github.com/ein57ein/ros_plugin_demo).\n
+
+This project is devided into three ROS-packages:
+
+- __plugin_demo_interface__: The \link plugin_demo_interface_namespace#PathPlanner PlugIn-Interface \endlink for this example
+- __plugin_demo_plugins__: Some PlugIns for this Interface (currently: \link plugin_demo_plugins_namespace#Direct Direct \endlink and \link plugin_demo_plugins_namespace#DirectOrtho DirectOrtho\endlink)
+- __plugin_demo_main__: An \link main.cpp executable\endlink, which includes the Interface and load one of the PlugIns dynamically
+
+The __visual_aids__ package include a \link pose_array_from_path.cpp tool \endlink which helps to show the orientation of points from a path using a PoseArray.
+
+\section doxy_plugin_com The basic communication between the plugin_demo packages:
+
+\htmlonly
+	<div class="image">
+		<img src="communication.png" alt="basic communication structure" width="70%"/>
+	</div>
+\endhtmlonly
+
+
+- functions are marked with brackets <b>()</b> at the end
+- a function which have a <b>"Callback"</b> in his name is assigned to a ROS::Subscriber
+- __setStartPub__ is a ROS::Publisher
+- __rViz__ is the ROS tool (is used for setting poses)
+- a plugIn could also contain ROS::Subscribers or ROS::Publishers
+
+**/
+

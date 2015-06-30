@@ -11,7 +11,7 @@ namespace plugin_demo_interface_namespace
 		init = false;
 	}
 	
-	int PathPlanner::initialize(ros::NodeHandle roshandle)
+	void PathPlanner::initialize(ros::NodeHandle roshandle)
 	{
 		if (init) {
 			ROS_WARN("[interface] plugin was already initialized. Nothing will be done.");
@@ -19,11 +19,14 @@ namespace plugin_demo_interface_namespace
 			getTargetSub = roshandle.subscribe("set_target", 10, &PathPlanner::getTargetCallback, this);
 			getStartSub = roshandle.subscribe("set_start", 10, &PathPlanner::getStarttCallback, this);
 			pathPub = roshandle.advertise<nav_msgs::Path>("path", 10);
-			sendPath = roshandle.createTimer(ros::Rate(1.0), &PathPlanner::sendPathCallback, this);
+			sendPathTimer = roshandle.createTimer(ros::Duration(2.0), &PathPlanner::sendPathCallback, this);
 
 			setPose2d(&start, 0, 0, 0);
 			target = start;
 			target.header.stamp = ros::Time::now();
+
+			tfFrameFromPoseStamped(&start, &start_tf);
+			tfFrameFromPoseStamped(&target, &target_tf);
 
 			current_path.header.stamp = ros::Time::now();
 			current_path.header.frame_id = "world";
@@ -32,6 +35,8 @@ namespace plugin_demo_interface_namespace
 			
 			onInit(roshandle);
 			init = true;
+
+			sendPath();
 		}
 	}
 
@@ -57,8 +62,13 @@ namespace plugin_demo_interface_namespace
 		setPose2d( &(this->start), start->x, start->y, start->theta);
 		setPose2d( &(this->target), target->x, target->y, target->theta);
 
+		tfFrameFromPoseStamped(&(this->start), &start_tf);
+		tfFrameFromPoseStamped(&(this->target), &target_tf);
+
 		current_path.poses.clear();
 		getPath();
+
+		sendPath();
 
 		return 0;
 	}
@@ -87,36 +97,48 @@ namespace plugin_demo_interface_namespace
 		return yaw;
 	}
 
+	void PathPlanner::tfFrameFromPoseStamped(geometry_msgs::PoseStamped *pose, tf::Transform *tf_tf)
+	{
+		tf_tf->setOrigin( tf::Vector3(pose->pose.position.x, pose->pose.position.y, pose->pose.position.z) );
+		tf::Quaternion q(pose->pose.orientation.x, pose->pose.orientation.y, pose->pose.orientation.z, pose->pose.orientation.w);
+		tf_tf->setRotation(q);
+	}
+
 	void PathPlanner::getStarttCallback(const geometry_msgs::Pose2D event)
 	{
 		setPose2d(&start, event.x, event.y, event.theta);
+
+		tfFrameFromPoseStamped(&start, &start_tf);
+		
 		current_path.poses.clear();
 		getPath();
+
+		sendPath();
 	}
 
 	void PathPlanner::getTargetCallback(const geometry_msgs::PoseStamped event)
 	{
 		target = event;
+
+		tfFrameFromPoseStamped(&target, &target_tf);
+		
 		current_path.poses.clear();
 		getPath();
+
+		sendPath();
 	}
 
 	void PathPlanner::sendPathCallback(const ros::TimerEvent& event)
 	{
-		tf::Transform transform;
-		
-		transform.setOrigin( tf::Vector3(start.pose.position.x, start.pose.position.y, start.pose.position.z) );
-		tf::Quaternion q(start.pose.orientation.x, start.pose.orientation.y, start.pose.orientation.z, start.pose.orientation.w);
-		transform.setRotation(q);
-		tf_br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "world", "start"));
+		sendPath();
+	}
 
-		transform.setOrigin( tf::Vector3(target.pose.position.x, target.pose.position.y, target.pose.position.z) );
-		tf::Quaternion q2(target.pose.orientation.x, target.pose.orientation.y, target.pose.orientation.z, target.pose.orientation.w);
-		transform.setRotation(q2);
-		tf_br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "world", "target"));
+	void PathPlanner::sendPath()
+	{
+		tf_br.sendTransform(tf::StampedTransform(start_tf, ros::Time::now(), "world", "start"));
+		tf_br.sendTransform(tf::StampedTransform(target_tf, ros::Time::now(), "world", "target"));
 		
 		current_path.header.stamp = ros::Time::now();
-		pathPub.publish(current_path);		
-	}
-	
+		pathPub.publish(current_path);
+	}	
 }

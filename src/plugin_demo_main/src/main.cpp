@@ -89,6 +89,8 @@ int main(int argc, char **argv)
 	loadPlugin(&plug_in_loader, &roshandle, plugin_name);
 	plugin_node->initialize(roshandle);
 
+	ros::Rate freq(8.0);
+
 	while (ros::ok())
 	{
 		if (change_plugin) {
@@ -99,6 +101,7 @@ int main(int argc, char **argv)
 			change_plugin = false;
 		}
 		ros::spinOnce();
+		freq.sleep();
 	}
 
 	plugin_node.reset();
