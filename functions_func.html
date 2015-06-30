@@ -80,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -102,11 +102,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="classplugin__demo__plugins__namespace_1_1Direct.html#a90e54f96b1c405031ec762b36ddf7a40">plugin_demo_plugins_namespace::Direct</a>
 , <a class="el" href="classplugin__demo__plugins__namespace_1_1DirectOrtho.html#a9b7ad77c4598763129096b0a480bec97">plugin_demo_plugins_namespace::DirectOrtho</a>
 </li>
+<li>getPoints()
+: <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a1de2029f019c2818242816364ba9c455">plugin_demo_interface_namespace::PathPlanner</a>
+</li>
 <li>getStarttCallback()
 : <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#aac4a610bed26bd2579302d96a9052a45">plugin_demo_interface_namespace::PathPlanner</a>
 </li>
 <li>getTargetCallback()
 : <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#aaa7885b8be11b10b5cdbd8ad3b31ca09">plugin_demo_interface_namespace::PathPlanner</a>
+</li>
+<li>getYawFromQuat()
+: <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a579c06fcaaa46d1dcb64da527554e037">plugin_demo_interface_namespace::PathPlanner</a>
+</li>
+<li>initialize()
+: <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a084ebc8f4ffdb2b335114dbe30262db8">plugin_demo_interface_namespace::PathPlanner</a>
 </li>
 <li>onInit()
 : <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ada1c6d02223c5dc933a4d138a7d7debd">plugin_demo_interface_namespace::PathPlanner</a>
@@ -116,11 +125,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>PathPlanner()
 : <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a8301eaef7cb44fad74f3e2ef45c1cc82">plugin_demo_interface_namespace::PathPlanner</a>
 </li>
+<li>sendPath()
+: <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ad178f32729c22cab5dfcfa8b0d2920a3">plugin_demo_interface_namespace::PathPlanner</a>
+</li>
 <li>sendPathCallback()
 : <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a359454368c878176c0f7875fcdebf2bc">plugin_demo_interface_namespace::PathPlanner</a>
 </li>
+<li>setPoints()
+: <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a28a5ef88d2563d1e1ecafd5d250dbfa1">plugin_demo_interface_namespace::PathPlanner</a>
+</li>
 <li>setPose2d()
 : <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ab29e2efd7d0caedc664298f21bb6db30">plugin_demo_interface_namespace::PathPlanner</a>
+</li>
+<li>tfFrameFromPoseStamped()
+: <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#abe2ddd1d2706cc31cc9f86e19feb65a5">plugin_demo_interface_namespace::PathPlanner</a>
 </li>
 <li>~Direct()
 : <a class="el" href="classplugin__demo__plugins__namespace_1_1Direct.html#a0614d3e67fe3dbea025692a3d373b982">plugin_demo_plugins_namespace::Direct</a>
@@ -135,7 +153,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jun 24 2015 19:12:15 for ros_plugin_demo by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jun 30 2015 18:09:11 for ros_plugin_demo by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

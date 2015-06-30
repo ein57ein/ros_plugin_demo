@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -115,17 +115,20 @@ Inheritance diagram for plugin_demo_interface_namespace::PathPlanner:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a51766be3a42d00a04e6b694b9555d715"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a51766be3a42d00a04e6b694b9555d715"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>initialize</b> (ros::NodeHandle roshandle)</td></tr>
-<tr class="separator:a51766be3a42d00a04e6b694b9555d715"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a579c06fcaaa46d1dcb64da527554e037"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a579c06fcaaa46d1dcb64da527554e037"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getYawFromQuat</b> (geometry_msgs::Quaternion quat)</td></tr>
+<tr class="memitem:a084ebc8f4ffdb2b335114dbe30262db8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a084ebc8f4ffdb2b335114dbe30262db8">initialize</a> (ros::NodeHandle roshandle)</td></tr>
+<tr class="memdesc:a084ebc8f4ffdb2b335114dbe30262db8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initalize the global variables.  <a href="#a084ebc8f4ffdb2b335114dbe30262db8">More...</a><br/></td></tr>
+<tr class="separator:a084ebc8f4ffdb2b335114dbe30262db8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a579c06fcaaa46d1dcb64da527554e037"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a579c06fcaaa46d1dcb64da527554e037">getYawFromQuat</a> (geometry_msgs::Quaternion quat)</td></tr>
+<tr class="memdesc:a579c06fcaaa46d1dcb64da527554e037"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert a quaternion into yaw  <a href="#a579c06fcaaa46d1dcb64da527554e037">More...</a><br/></td></tr>
 <tr class="separator:a579c06fcaaa46d1dcb64da527554e037"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28a5ef88d2563d1e1ecafd5d250dbfa1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a28a5ef88d2563d1e1ecafd5d250dbfa1"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>setPoints</b> (geometry_msgs::Pose2D *<a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>, geometry_msgs::Pose2D *<a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a>)</td></tr>
+<tr class="memitem:abe2ddd1d2706cc31cc9f86e19feb65a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#abe2ddd1d2706cc31cc9f86e19feb65a5">tfFrameFromPoseStamped</a> (geometry_msgs::PoseStamped *pose, tf::Transform *tf_tf)</td></tr>
+<tr class="memdesc:abe2ddd1d2706cc31cc9f86e19feb65a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">build a tf-frame for a given pose  <a href="#abe2ddd1d2706cc31cc9f86e19feb65a5">More...</a><br/></td></tr>
+<tr class="separator:abe2ddd1d2706cc31cc9f86e19feb65a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28a5ef88d2563d1e1ecafd5d250dbfa1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a28a5ef88d2563d1e1ecafd5d250dbfa1">setPoints</a> (geometry_msgs::Pose2D *<a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>, geometry_msgs::Pose2D *<a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a>)</td></tr>
+<tr class="memdesc:a28a5ef88d2563d1e1ecafd5d250dbfa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">replace the current <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a" title="starting pose of the path ">start</a> and <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257" title="last pose of the path ">target</a> poses and call <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#af1413741a460ed432129d3d22360c7a0" title="calculate current_path from start and target inside a plugIn. ">getPath()</a>  <a href="#a28a5ef88d2563d1e1ecafd5d250dbfa1">More...</a><br/></td></tr>
 <tr class="separator:a28a5ef88d2563d1e1ecafd5d250dbfa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1de2029f019c2818242816364ba9c455"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1de2029f019c2818242816364ba9c455"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getPoints</b> (geometry_msgs::Pose2D *<a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>, geometry_msgs::Pose2D *<a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a>)</td></tr>
+<tr class="memitem:a1de2029f019c2818242816364ba9c455"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a1de2029f019c2818242816364ba9c455">getPoints</a> (geometry_msgs::Pose2D *<a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>, geometry_msgs::Pose2D *<a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a>)</td></tr>
+<tr class="memdesc:a1de2029f019c2818242816364ba9c455"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the current <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a" title="starting pose of the path ">start</a> and <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257" title="last pose of the path ">target</a> poses  <a href="#a1de2029f019c2818242816364ba9c455">More...</a><br/></td></tr>
 <tr class="separator:a1de2029f019c2818242816364ba9c455"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85ae90030726cf484d0a9be46f5c3197"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a85ae90030726cf484d0a9be46f5c3197"></a>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a85ae90030726cf484d0a9be46f5c3197">~PathPlanner</a> ()</td></tr>
@@ -145,7 +148,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:af1413741a460ed432129d3d22360c7a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculate <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2650f7a41104ba861aa6832702fa7e13" title="contain the path ">current_path</a> from <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a" title="starting pose of the path ">start</a> and <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257" title="last pose of the path ">target</a> inside a plugIn.  <a href="#af1413741a460ed432129d3d22360c7a0">More...</a><br/></td></tr>
 <tr class="separator:af1413741a460ed432129d3d22360c7a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab29e2efd7d0caedc664298f21bb6db30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ab29e2efd7d0caedc664298f21bb6db30">setPose2d</a> (geometry_msgs::PoseStamped *pose3d, double x, double y, double theta)</td></tr>
-<tr class="memdesc:ab29e2efd7d0caedc664298f21bb6db30"><td class="mdescLeft">&#160;</td><td class="mdescRight">put a given 2D-Pose into 3D-Stamped-Pose.  <a href="#ab29e2efd7d0caedc664298f21bb6db30">More...</a><br/></td></tr>
+<tr class="memdesc:ab29e2efd7d0caedc664298f21bb6db30"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert a given 2D-Pose into 3D-Stamped-Pose.  <a href="#ab29e2efd7d0caedc664298f21bb6db30">More...</a><br/></td></tr>
 <tr class="separator:ab29e2efd7d0caedc664298f21bb6db30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
@@ -172,11 +175,15 @@ Private Member Functions</h2></td></tr>
 <tr class="memdesc:aaa7885b8be11b10b5cdbd8ad3b31ca09"><td class="mdescLeft">&#160;</td><td class="mdescRight">receives a new <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257" title="last pose of the path ">target</a> pose and call <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#af1413741a460ed432129d3d22360c7a0" title="calculate current_path from start and target inside a plugIn. ">getPath()</a>.  <a href="#aaa7885b8be11b10b5cdbd8ad3b31ca09">More...</a><br/></td></tr>
 <tr class="separator:aaa7885b8be11b10b5cdbd8ad3b31ca09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a359454368c878176c0f7875fcdebf2bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a359454368c878176c0f7875fcdebf2bc">sendPathCallback</a> (const ros::TimerEvent &amp;event)</td></tr>
-<tr class="memdesc:a359454368c878176c0f7875fcdebf2bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">publish <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2650f7a41104ba861aa6832702fa7e13" title="contain the path ">current_path</a> and the poses <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a" title="starting pose of the path ">start</a> and <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257" title="last pose of the path ">target</a> as a tf-frame  <a href="#a359454368c878176c0f7875fcdebf2bc">More...</a><br/></td></tr>
+<tr class="memdesc:a359454368c878176c0f7875fcdebf2bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">call <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ad178f32729c22cab5dfcfa8b0d2920a3" title="publish current_path and the start_tf and target_tf frames ">sendPath()</a>  <a href="#a359454368c878176c0f7875fcdebf2bc">More...</a><br/></td></tr>
 <tr class="separator:a359454368c878176c0f7875fcdebf2bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac4a610bed26bd2579302d96a9052a45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#aac4a610bed26bd2579302d96a9052a45">getStarttCallback</a> (const geometry_msgs::Pose2D event)</td></tr>
 <tr class="memdesc:aac4a610bed26bd2579302d96a9052a45"><td class="mdescLeft">&#160;</td><td class="mdescRight">receives a new <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a" title="starting pose of the path ">start</a> pose and call <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#af1413741a460ed432129d3d22360c7a0" title="calculate current_path from start and target inside a plugIn. ">getPath()</a>.  <a href="#aac4a610bed26bd2579302d96a9052a45">More...</a><br/></td></tr>
 <tr class="separator:aac4a610bed26bd2579302d96a9052a45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad178f32729c22cab5dfcfa8b0d2920a3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad178f32729c22cab5dfcfa8b0d2920a3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ad178f32729c22cab5dfcfa8b0d2920a3">sendPath</a> ()</td></tr>
+<tr class="memdesc:ad178f32729c22cab5dfcfa8b0d2920a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">publish <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2650f7a41104ba861aa6832702fa7e13" title="contain the path ">current_path</a> and the <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a73babbb1986d48a012f1cd5b0e29558f" title="the start tf-frame ">start_tf</a> and <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#aab6db71e3a6bca127ec306fdd1432e8d" title="the target tf-frame ">target_tf</a> frames <br/></td></tr>
+<tr class="separator:ad178f32729c22cab5dfcfa8b0d2920a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -192,10 +199,18 @@ ros::Subscriber&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 ros::Publisher&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#abe6618f1bd4b1e17bb9338c3c8535668">pathPub</a></td></tr>
 <tr class="memdesc:abe6618f1bd4b1e17bb9338c3c8535668"><td class="mdescLeft">&#160;</td><td class="mdescRight">send the path calculated by the plugIn <br/></td></tr>
 <tr class="separator:abe6618f1bd4b1e17bb9338c3c8535668"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5317ee14dc8d4240320fa74fb708bfc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa5317ee14dc8d4240320fa74fb708bfc"></a>
-ros::Timer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#aa5317ee14dc8d4240320fa74fb708bfc">sendPath</a></td></tr>
-<tr class="memdesc:aa5317ee14dc8d4240320fa74fb708bfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">periodic calling of the path publisher <br/></td></tr>
-<tr class="separator:aa5317ee14dc8d4240320fa74fb708bfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05175bff2775bee1a2a5d152c05de250"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a05175bff2775bee1a2a5d152c05de250"></a>
+ros::Timer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a05175bff2775bee1a2a5d152c05de250">sendPathTimer</a></td></tr>
+<tr class="memdesc:a05175bff2775bee1a2a5d152c05de250"><td class="mdescLeft">&#160;</td><td class="mdescRight">periodic calling of the path publisher <br/></td></tr>
+<tr class="separator:a05175bff2775bee1a2a5d152c05de250"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73babbb1986d48a012f1cd5b0e29558f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a73babbb1986d48a012f1cd5b0e29558f"></a>
+tf::Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a73babbb1986d48a012f1cd5b0e29558f">start_tf</a></td></tr>
+<tr class="memdesc:a73babbb1986d48a012f1cd5b0e29558f"><td class="mdescLeft">&#160;</td><td class="mdescRight">the start tf-frame <br/></td></tr>
+<tr class="separator:a73babbb1986d48a012f1cd5b0e29558f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab6db71e3a6bca127ec306fdd1432e8d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aab6db71e3a6bca127ec306fdd1432e8d"></a>
+tf::Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#aab6db71e3a6bca127ec306fdd1432e8d">target_tf</a></td></tr>
+<tr class="memdesc:aab6db71e3a6bca127ec306fdd1432e8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">the target tf-frame <br/></td></tr>
+<tr class="separator:aab6db71e3a6bca127ec306fdd1432e8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0833e3cf08abce7bc52803af743777b9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0833e3cf08abce7bc52803af743777b9"></a>
 tf::TransformBroadcaster&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a0833e3cf08abce7bc52803af743777b9">tf_br</a></td></tr>
 <tr class="memdesc:a0833e3cf08abce7bc52803af743777b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">send tf-transforms <br/></td></tr>
@@ -235,6 +250,58 @@ tf::TransformBroadcaster&#160;</td><td class="memItemRight" valign="bottom"><a c
 
 </div>
 </div>
+<a class="anchor" id="a1de2029f019c2818242816364ba9c455"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int plugin_demo_interface_namespace::PathPlanner::getPoints </td>
+          <td>(</td>
+          <td class="paramtype">geometry_msgs::Pose2D *&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">geometry_msgs::Pose2D *&#160;</td>
+          <td class="paramname"><em>target</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>returns the current <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a" title="starting pose of the path ">start</a> and <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257" title="last pose of the path ">target</a> poses </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>current start pose </td></tr>
+    <tr><td class="paramname">target</td><td>current target pose </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>error code </dd></dl>
+
+<p>Definition at line <a class="el" href="path__planner_8cpp_source.html#l00076">76</a> of file <a class="el" href="path__planner_8cpp_source.html">path_planner.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>-&gt;x = this-&gt;<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>.pose.position.x;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>-&gt;y = this-&gt;<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>.pose.position.y;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>-&gt;theta = <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a579c06fcaaa46d1dcb64da527554e037">getYawFromQuat</a>(this-&gt;<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>.pose.orientation);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a>-&gt;x = this-&gt;<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a>.pose.position.x;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a>-&gt;y = this-&gt;<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a>.pose.position.y;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a>-&gt;theta = <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a579c06fcaaa46d1dcb64da527554e037">getYawFromQuat</a>(this-&gt;<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a>.pose.orientation);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_a579c06fcaaa46d1dcb64da527554e037"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a579c06fcaaa46d1dcb64da527554e037">plugin_demo_interface_namespace::PathPlanner::getYawFromQuat</a></div><div class="ttdeci">double getYawFromQuat(geometry_msgs::Quaternion quat)</div><div class="ttdoc">convert a quaternion into yaw </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8cpp_source.html#l00089">path_planner.cpp:89</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_acb9a5eb14998f0c0852e9e714da48257"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">plugin_demo_interface_namespace::PathPlanner::target</a></div><div class="ttdeci">geometry_msgs::PoseStamped target</div><div class="ttdoc">last pose of the path </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00057">path_planner.hpp:57</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_a2fb8dade4caee68e04b0f94b7c05992a"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">plugin_demo_interface_namespace::PathPlanner::start</a></div><div class="ttdeci">geometry_msgs::PoseStamped start</div><div class="ttdoc">starting pose of the path </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00056">path_planner.hpp:56</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a class="anchor" id="aac4a610bed26bd2579302d96a9052a45"></a>
 <div class="memitem">
 <div class="memproto">
@@ -265,16 +332,24 @@ tf::TransformBroadcaster&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="path__planner_8cpp_source.html#l00090">90</a> of file <a class="el" href="path__planner_8cpp_source.html">path_planner.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ab29e2efd7d0caedc664298f21bb6db30">setPose2d</a>(&amp;<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>, event.x, event.y, event.theta);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2650f7a41104ba861aa6832702fa7e13">current_path</a>.poses.clear();</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#af1413741a460ed432129d3d22360c7a0">getPath</a>();</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
-<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_a2650f7a41104ba861aa6832702fa7e13"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2650f7a41104ba861aa6832702fa7e13">plugin_demo_interface_namespace::PathPlanner::current_path</a></div><div class="ttdeci">nav_msgs::Path current_path</div><div class="ttdoc">contain the path </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00051">path_planner.hpp:51</a></div></div>
+<p>Definition at line <a class="el" href="path__planner_8cpp_source.html#l00107">107</a> of file <a class="el" href="path__planner_8cpp_source.html">path_planner.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ab29e2efd7d0caedc664298f21bb6db30">setPose2d</a>(&amp;<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>, event.x, event.y, event.theta);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#abe2ddd1d2706cc31cc9f86e19feb65a5">tfFrameFromPoseStamped</a>(&amp;<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>, &amp;<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a73babbb1986d48a012f1cd5b0e29558f">start_tf</a>);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2650f7a41104ba861aa6832702fa7e13">current_path</a>.poses.clear();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#af1413741a460ed432129d3d22360c7a0">getPath</a>();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ad178f32729c22cab5dfcfa8b0d2920a3">sendPath</a>();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_ad178f32729c22cab5dfcfa8b0d2920a3"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ad178f32729c22cab5dfcfa8b0d2920a3">plugin_demo_interface_namespace::PathPlanner::sendPath</a></div><div class="ttdeci">void sendPath()</div><div class="ttdoc">publish current_path and the start_tf and target_tf frames </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8cpp_source.html#l00136">path_planner.cpp:136</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_abe2ddd1d2706cc31cc9f86e19feb65a5"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#abe2ddd1d2706cc31cc9f86e19feb65a5">plugin_demo_interface_namespace::PathPlanner::tfFrameFromPoseStamped</a></div><div class="ttdeci">void tfFrameFromPoseStamped(geometry_msgs::PoseStamped *pose, tf::Transform *tf_tf)</div><div class="ttdoc">build a tf-frame for a given pose </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8cpp_source.html#l00100">path_planner.cpp:100</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_a73babbb1986d48a012f1cd5b0e29558f"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a73babbb1986d48a012f1cd5b0e29558f">plugin_demo_interface_namespace::PathPlanner::start_tf</a></div><div class="ttdeci">tf::Transform start_tf</div><div class="ttdoc">the start tf-frame </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00030">path_planner.hpp:30</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_a2650f7a41104ba861aa6832702fa7e13"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2650f7a41104ba861aa6832702fa7e13">plugin_demo_interface_namespace::PathPlanner::current_path</a></div><div class="ttdeci">nav_msgs::Path current_path</div><div class="ttdoc">contain the path </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00058">path_planner.hpp:58</a></div></div>
 <div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_af1413741a460ed432129d3d22360c7a0"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#af1413741a460ed432129d3d22360c7a0">plugin_demo_interface_namespace::PathPlanner::getPath</a></div><div class="ttdeci">virtual int getPath()=0</div><div class="ttdoc">calculate current_path from start and target inside a plugIn. </div></div>
-<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_ab29e2efd7d0caedc664298f21bb6db30"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ab29e2efd7d0caedc664298f21bb6db30">plugin_demo_interface_namespace::PathPlanner::setPose2d</a></div><div class="ttdeci">void setPose2d(geometry_msgs::PoseStamped *pose3d, double x, double y, double theta)</div><div class="ttdoc">put a given 2D-Pose into 3D-Stamped-Pose. </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8cpp_source.html#l00043">path_planner.cpp:43</a></div></div>
-<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_a2fb8dade4caee68e04b0f94b7c05992a"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">plugin_demo_interface_namespace::PathPlanner::start</a></div><div class="ttdeci">geometry_msgs::PoseStamped start</div><div class="ttdoc">starting pose of the path </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00049">path_planner.hpp:49</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_ab29e2efd7d0caedc664298f21bb6db30"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ab29e2efd7d0caedc664298f21bb6db30">plugin_demo_interface_namespace::PathPlanner::setPose2d</a></div><div class="ttdeci">void setPose2d(geometry_msgs::PoseStamped *pose3d, double x, double y, double theta)</div><div class="ttdoc">convert a given 2D-Pose into 3D-Stamped-Pose. </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8cpp_source.html#l00048">path_planner.cpp:48</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_a2fb8dade4caee68e04b0f94b7c05992a"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">plugin_demo_interface_namespace::PathPlanner::start</a></div><div class="ttdeci">geometry_msgs::PoseStamped start</div><div class="ttdoc">starting pose of the path </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00056">path_planner.hpp:56</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -308,15 +383,129 @@ tf::TransformBroadcaster&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="path__planner_8cpp_source.html#l00097">97</a> of file <a class="el" href="path__planner_8cpp_source.html">path_planner.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a> = event;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2650f7a41104ba861aa6832702fa7e13">current_path</a>.poses.clear();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#af1413741a460ed432129d3d22360c7a0">getPath</a>();</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
-<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_acb9a5eb14998f0c0852e9e714da48257"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">plugin_demo_interface_namespace::PathPlanner::target</a></div><div class="ttdeci">geometry_msgs::PoseStamped target</div><div class="ttdoc">last pose of the path </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00050">path_planner.hpp:50</a></div></div>
-<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_a2650f7a41104ba861aa6832702fa7e13"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2650f7a41104ba861aa6832702fa7e13">plugin_demo_interface_namespace::PathPlanner::current_path</a></div><div class="ttdeci">nav_msgs::Path current_path</div><div class="ttdoc">contain the path </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00051">path_planner.hpp:51</a></div></div>
+<p>Definition at line <a class="el" href="path__planner_8cpp_source.html#l00119">119</a> of file <a class="el" href="path__planner_8cpp_source.html">path_planner.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a> = event;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#abe2ddd1d2706cc31cc9f86e19feb65a5">tfFrameFromPoseStamped</a>(&amp;<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a>, &amp;<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#aab6db71e3a6bca127ec306fdd1432e8d">target_tf</a>);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2650f7a41104ba861aa6832702fa7e13">current_path</a>.poses.clear();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#af1413741a460ed432129d3d22360c7a0">getPath</a>();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ad178f32729c22cab5dfcfa8b0d2920a3">sendPath</a>();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_ad178f32729c22cab5dfcfa8b0d2920a3"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ad178f32729c22cab5dfcfa8b0d2920a3">plugin_demo_interface_namespace::PathPlanner::sendPath</a></div><div class="ttdeci">void sendPath()</div><div class="ttdoc">publish current_path and the start_tf and target_tf frames </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8cpp_source.html#l00136">path_planner.cpp:136</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_abe2ddd1d2706cc31cc9f86e19feb65a5"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#abe2ddd1d2706cc31cc9f86e19feb65a5">plugin_demo_interface_namespace::PathPlanner::tfFrameFromPoseStamped</a></div><div class="ttdeci">void tfFrameFromPoseStamped(geometry_msgs::PoseStamped *pose, tf::Transform *tf_tf)</div><div class="ttdoc">build a tf-frame for a given pose </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8cpp_source.html#l00100">path_planner.cpp:100</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_acb9a5eb14998f0c0852e9e714da48257"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">plugin_demo_interface_namespace::PathPlanner::target</a></div><div class="ttdeci">geometry_msgs::PoseStamped target</div><div class="ttdoc">last pose of the path </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00057">path_planner.hpp:57</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_a2650f7a41104ba861aa6832702fa7e13"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2650f7a41104ba861aa6832702fa7e13">plugin_demo_interface_namespace::PathPlanner::current_path</a></div><div class="ttdeci">nav_msgs::Path current_path</div><div class="ttdoc">contain the path </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00058">path_planner.hpp:58</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_aab6db71e3a6bca127ec306fdd1432e8d"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#aab6db71e3a6bca127ec306fdd1432e8d">plugin_demo_interface_namespace::PathPlanner::target_tf</a></div><div class="ttdeci">tf::Transform target_tf</div><div class="ttdoc">the target tf-frame </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00031">path_planner.hpp:31</a></div></div>
 <div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_af1413741a460ed432129d3d22360c7a0"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#af1413741a460ed432129d3d22360c7a0">plugin_demo_interface_namespace::PathPlanner::getPath</a></div><div class="ttdeci">virtual int getPath()=0</div><div class="ttdoc">calculate current_path from start and target inside a plugIn. </div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a579c06fcaaa46d1dcb64da527554e037"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double plugin_demo_interface_namespace::PathPlanner::getYawFromQuat </td>
+          <td>(</td>
+          <td class="paramtype">geometry_msgs::Quaternion&#160;</td>
+          <td class="paramname"><em>quat</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>convert a quaternion into yaw </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">quat</td><td>a Quaternion </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the yaw angle of the quaternion </dd></dl>
+
+<p>Definition at line <a class="el" href="path__planner_8cpp_source.html#l00089">89</a> of file <a class="el" href="path__planner_8cpp_source.html">path_planner.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="comment">//geometry_msgs::Quaternion quat = ;</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        tf::Quaternion q(quat.x, quat.y, quat.z, quat.w);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        tf::Matrix3x3 m(q);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">double</span> roll, pitch, yaw;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        m.getRPY(roll, pitch, yaw);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">return</span> yaw;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a084ebc8f4ffdb2b335114dbe30262db8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void plugin_demo_interface_namespace::PathPlanner::initialize </td>
+          <td>(</td>
+          <td class="paramtype">ros::NodeHandle&#160;</td>
+          <td class="paramname"><em>roshandle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initalize the global variables. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">roshandle</td><td>a valid ROS NodeHandle </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="path__planner_8cpp_source.html#l00014">14</a> of file <a class="el" href="path__planner_8cpp_source.html">path_planner.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a441c1eb901267df001329cdf91d39286">init</a>) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            ROS_WARN(<span class="stringliteral">&quot;[interface] plugin was already initialized. Nothing will be done.&quot;</span>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2dfb74ebe043fc2bc3336da4df9d88f6">getTargetSub</a> = roshandle.subscribe(<span class="stringliteral">&quot;set_target&quot;</span>, 10, &amp;<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#aaa7885b8be11b10b5cdbd8ad3b31ca09">PathPlanner::getTargetCallback</a>, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2485806da0b51fa674fc60da6ae95847">getStartSub</a> = roshandle.subscribe(<span class="stringliteral">&quot;set_start&quot;</span>, 10, &amp;<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#aac4a610bed26bd2579302d96a9052a45">PathPlanner::getStarttCallback</a>, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#abe6618f1bd4b1e17bb9338c3c8535668">pathPub</a> = roshandle.advertise&lt;nav_msgs::Path&gt;(<span class="stringliteral">&quot;path&quot;</span>, 10);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a05175bff2775bee1a2a5d152c05de250">sendPathTimer</a> = roshandle.createTimer(ros::Duration(2.0), &amp;<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a359454368c878176c0f7875fcdebf2bc">PathPlanner::sendPathCallback</a>, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ab29e2efd7d0caedc664298f21bb6db30">setPose2d</a>(&amp;<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>, 0, 0, 0);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a> = <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a>.header.stamp = ros::Time::now();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#abe2ddd1d2706cc31cc9f86e19feb65a5">tfFrameFromPoseStamped</a>(&amp;<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>, &amp;<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a73babbb1986d48a012f1cd5b0e29558f">start_tf</a>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#abe2ddd1d2706cc31cc9f86e19feb65a5">tfFrameFromPoseStamped</a>(&amp;<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a>, &amp;<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#aab6db71e3a6bca127ec306fdd1432e8d">target_tf</a>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2650f7a41104ba861aa6832702fa7e13">current_path</a>.header.stamp = ros::Time::now();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2650f7a41104ba861aa6832702fa7e13">current_path</a>.header.frame_id = <span class="stringliteral">&quot;world&quot;</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2650f7a41104ba861aa6832702fa7e13">current_path</a>.poses.push_back(<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2650f7a41104ba861aa6832702fa7e13">current_path</a>.poses.push_back(<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ada1c6d02223c5dc933a4d138a7d7debd">onInit</a>(roshandle);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a441c1eb901267df001329cdf91d39286">init</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ad178f32729c22cab5dfcfa8b0d2920a3">sendPath</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_a05175bff2775bee1a2a5d152c05de250"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a05175bff2775bee1a2a5d152c05de250">plugin_demo_interface_namespace::PathPlanner::sendPathTimer</a></div><div class="ttdeci">ros::Timer sendPathTimer</div><div class="ttdoc">periodic calling of the path publisher </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00028">path_planner.hpp:28</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_a359454368c878176c0f7875fcdebf2bc"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a359454368c878176c0f7875fcdebf2bc">plugin_demo_interface_namespace::PathPlanner::sendPathCallback</a></div><div class="ttdeci">void sendPathCallback(const ros::TimerEvent &amp;event)</div><div class="ttdoc">call sendPath() </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8cpp_source.html#l00131">path_planner.cpp:131</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_aaa7885b8be11b10b5cdbd8ad3b31ca09"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#aaa7885b8be11b10b5cdbd8ad3b31ca09">plugin_demo_interface_namespace::PathPlanner::getTargetCallback</a></div><div class="ttdeci">void getTargetCallback(const geometry_msgs::PoseStamped event)</div><div class="ttdoc">receives a new target pose and call getPath(). </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8cpp_source.html#l00119">path_planner.cpp:119</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_abe6618f1bd4b1e17bb9338c3c8535668"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#abe6618f1bd4b1e17bb9338c3c8535668">plugin_demo_interface_namespace::PathPlanner::pathPub</a></div><div class="ttdeci">ros::Publisher pathPub</div><div class="ttdoc">send the path calculated by the plugIn </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00027">path_planner.hpp:27</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_aac4a610bed26bd2579302d96a9052a45"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#aac4a610bed26bd2579302d96a9052a45">plugin_demo_interface_namespace::PathPlanner::getStarttCallback</a></div><div class="ttdeci">void getStarttCallback(const geometry_msgs::Pose2D event)</div><div class="ttdoc">receives a new start pose and call getPath(). </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8cpp_source.html#l00107">path_planner.cpp:107</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_ada1c6d02223c5dc933a4d138a7d7debd"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ada1c6d02223c5dc933a4d138a7d7debd">plugin_demo_interface_namespace::PathPlanner::onInit</a></div><div class="ttdeci">virtual int onInit(ros::NodeHandle roshandle)</div><div class="ttdoc">In this function the plugIn can do some initialisation depending on a ROS NodeHandle. </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8cpp_source.html#l00043">path_planner.cpp:43</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_ad178f32729c22cab5dfcfa8b0d2920a3"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ad178f32729c22cab5dfcfa8b0d2920a3">plugin_demo_interface_namespace::PathPlanner::sendPath</a></div><div class="ttdeci">void sendPath()</div><div class="ttdoc">publish current_path and the start_tf and target_tf frames </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8cpp_source.html#l00136">path_planner.cpp:136</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_abe2ddd1d2706cc31cc9f86e19feb65a5"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#abe2ddd1d2706cc31cc9f86e19feb65a5">plugin_demo_interface_namespace::PathPlanner::tfFrameFromPoseStamped</a></div><div class="ttdeci">void tfFrameFromPoseStamped(geometry_msgs::PoseStamped *pose, tf::Transform *tf_tf)</div><div class="ttdoc">build a tf-frame for a given pose </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8cpp_source.html#l00100">path_planner.cpp:100</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_a2485806da0b51fa674fc60da6ae95847"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2485806da0b51fa674fc60da6ae95847">plugin_demo_interface_namespace::PathPlanner::getStartSub</a></div><div class="ttdeci">ros::Subscriber getStartSub</div><div class="ttdoc">listen for a new start pose </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00026">path_planner.hpp:26</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_a73babbb1986d48a012f1cd5b0e29558f"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a73babbb1986d48a012f1cd5b0e29558f">plugin_demo_interface_namespace::PathPlanner::start_tf</a></div><div class="ttdeci">tf::Transform start_tf</div><div class="ttdoc">the start tf-frame </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00030">path_planner.hpp:30</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_acb9a5eb14998f0c0852e9e714da48257"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">plugin_demo_interface_namespace::PathPlanner::target</a></div><div class="ttdeci">geometry_msgs::PoseStamped target</div><div class="ttdoc">last pose of the path </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00057">path_planner.hpp:57</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_a2dfb74ebe043fc2bc3336da4df9d88f6"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2dfb74ebe043fc2bc3336da4df9d88f6">plugin_demo_interface_namespace::PathPlanner::getTargetSub</a></div><div class="ttdeci">ros::Subscriber getTargetSub</div><div class="ttdoc">listen for a new target pose </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00025">path_planner.hpp:25</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_a2650f7a41104ba861aa6832702fa7e13"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2650f7a41104ba861aa6832702fa7e13">plugin_demo_interface_namespace::PathPlanner::current_path</a></div><div class="ttdeci">nav_msgs::Path current_path</div><div class="ttdoc">contain the path </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00058">path_planner.hpp:58</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_aab6db71e3a6bca127ec306fdd1432e8d"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#aab6db71e3a6bca127ec306fdd1432e8d">plugin_demo_interface_namespace::PathPlanner::target_tf</a></div><div class="ttdeci">tf::Transform target_tf</div><div class="ttdoc">the target tf-frame </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00031">path_planner.hpp:31</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_ab29e2efd7d0caedc664298f21bb6db30"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ab29e2efd7d0caedc664298f21bb6db30">plugin_demo_interface_namespace::PathPlanner::setPose2d</a></div><div class="ttdeci">void setPose2d(geometry_msgs::PoseStamped *pose3d, double x, double y, double theta)</div><div class="ttdoc">convert a given 2D-Pose into 3D-Stamped-Pose. </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8cpp_source.html#l00048">path_planner.cpp:48</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_a441c1eb901267df001329cdf91d39286"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a441c1eb901267df001329cdf91d39286">plugin_demo_interface_namespace::PathPlanner::init</a></div><div class="ttdeci">bool init</div><div class="ttdoc">true if initialized. </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00054">path_planner.hpp:54</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_a2fb8dade4caee68e04b0f94b7c05992a"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">plugin_demo_interface_namespace::PathPlanner::start</a></div><div class="ttdeci">geometry_msgs::PoseStamped start</div><div class="ttdoc">starting pose of the path </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00056">path_planner.hpp:56</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -353,10 +542,10 @@ tf::TransformBroadcaster&#160;</td><td class="memItemRight" valign="bottom"><a c
 
 <p>Reimplemented in <a class="el" href="classplugin__demo__plugins__namespace_1_1Direct.html#a930d11bc4addae13b1ff2bb31342dfeb">plugin_demo_plugins_namespace::Direct</a>, and <a class="el" href="classplugin__demo__plugins__namespace_1_1DirectOrtho.html#a7cb3b3a27158470ad2dca1d85869cdda">plugin_demo_plugins_namespace::DirectOrtho</a>.</p>
 
-<p>Definition at line <a class="el" href="path__planner_8cpp_source.html#l00038">38</a> of file <a class="el" href="path__planner_8cpp_source.html">path_planner.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        ROS_INFO(<span class="stringliteral">&quot;[interface] plugIn has no onInit function&quot;</span>);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<p>Definition at line <a class="el" href="path__planner_8cpp_source.html#l00043">43</a> of file <a class="el" href="path__planner_8cpp_source.html">path_planner.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        ROS_INFO(<span class="stringliteral">&quot;[interface] plugIn has no onInit function&quot;</span>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -382,7 +571,7 @@ tf::TransformBroadcaster&#160;</td><td class="memItemRight" valign="bottom"><a c
 </table>
 </div><div class="memdoc">
 
-<p>publish <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2650f7a41104ba861aa6832702fa7e13" title="contain the path ">current_path</a> and the poses <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a" title="starting pose of the path ">start</a> and <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257" title="last pose of the path ">target</a> as a tf-frame </p>
+<p>call <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ad178f32729c22cab5dfcfa8b0d2920a3" title="publish current_path and the start_tf and target_tf frames ">sendPath()</a> </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">event</td><td>some time values </td></tr>
@@ -390,28 +579,72 @@ tf::TransformBroadcaster&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="path__planner_8cpp_source.html#l00104">104</a> of file <a class="el" href="path__planner_8cpp_source.html">path_planner.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        tf::Transform transform;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        transform.setOrigin( tf::Vector3(<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>.pose.position.x, <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>.pose.position.y, <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>.pose.position.z) );</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        tf::Quaternion q(<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>.pose.orientation.x, <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>.pose.orientation.y, <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>.pose.orientation.z, <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>.pose.orientation.w);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        transform.setRotation(q);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a0833e3cf08abce7bc52803af743777b9">tf_br</a>.sendTransform(tf::StampedTransform(transform, ros::Time::now(), <span class="stringliteral">&quot;world&quot;</span>, <span class="stringliteral">&quot;start&quot;</span>));</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        transform.setOrigin( tf::Vector3(<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a>.pose.position.x, <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a>.pose.position.y, <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a>.pose.position.z) );</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        tf::Quaternion q2(<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a>.pose.orientation.x, <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a>.pose.orientation.y, <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a>.pose.orientation.z, <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a>.pose.orientation.w);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        transform.setRotation(q2);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a0833e3cf08abce7bc52803af743777b9">tf_br</a>.sendTransform(tf::StampedTransform(transform, ros::Time::now(), <span class="stringliteral">&quot;world&quot;</span>, <span class="stringliteral">&quot;target&quot;</span>));</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2650f7a41104ba861aa6832702fa7e13">current_path</a>.header.stamp = ros::Time::now();</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#abe6618f1bd4b1e17bb9338c3c8535668">pathPub</a>.publish(<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2650f7a41104ba861aa6832702fa7e13">current_path</a>);      </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
-<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_abe6618f1bd4b1e17bb9338c3c8535668"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#abe6618f1bd4b1e17bb9338c3c8535668">plugin_demo_interface_namespace::PathPlanner::pathPub</a></div><div class="ttdeci">ros::Publisher pathPub</div><div class="ttdoc">send the path calculated by the plugIn </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00027">path_planner.hpp:27</a></div></div>
-<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_a0833e3cf08abce7bc52803af743777b9"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a0833e3cf08abce7bc52803af743777b9">plugin_demo_interface_namespace::PathPlanner::tf_br</a></div><div class="ttdeci">tf::TransformBroadcaster tf_br</div><div class="ttdoc">send tf-transforms </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00029">path_planner.hpp:29</a></div></div>
-<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_acb9a5eb14998f0c0852e9e714da48257"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">plugin_demo_interface_namespace::PathPlanner::target</a></div><div class="ttdeci">geometry_msgs::PoseStamped target</div><div class="ttdoc">last pose of the path </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00050">path_planner.hpp:50</a></div></div>
-<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_a2650f7a41104ba861aa6832702fa7e13"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2650f7a41104ba861aa6832702fa7e13">plugin_demo_interface_namespace::PathPlanner::current_path</a></div><div class="ttdeci">nav_msgs::Path current_path</div><div class="ttdoc">contain the path </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00051">path_planner.hpp:51</a></div></div>
-<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_a2fb8dade4caee68e04b0f94b7c05992a"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">plugin_demo_interface_namespace::PathPlanner::start</a></div><div class="ttdeci">geometry_msgs::PoseStamped start</div><div class="ttdoc">starting pose of the path </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00049">path_planner.hpp:49</a></div></div>
+<p>Definition at line <a class="el" href="path__planner_8cpp_source.html#l00131">131</a> of file <a class="el" href="path__planner_8cpp_source.html">path_planner.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ad178f32729c22cab5dfcfa8b0d2920a3">sendPath</a>();</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_ad178f32729c22cab5dfcfa8b0d2920a3"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ad178f32729c22cab5dfcfa8b0d2920a3">plugin_demo_interface_namespace::PathPlanner::sendPath</a></div><div class="ttdeci">void sendPath()</div><div class="ttdoc">publish current_path and the start_tf and target_tf frames </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8cpp_source.html#l00136">path_planner.cpp:136</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a28a5ef88d2563d1e1ecafd5d250dbfa1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int plugin_demo_interface_namespace::PathPlanner::setPoints </td>
+          <td>(</td>
+          <td class="paramtype">geometry_msgs::Pose2D *&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">geometry_msgs::Pose2D *&#160;</td>
+          <td class="paramname"><em>target</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>replace the current <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a" title="starting pose of the path ">start</a> and <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257" title="last pose of the path ">target</a> poses and call <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#af1413741a460ed432129d3d22360c7a0" title="calculate current_path from start and target inside a plugIn. ">getPath()</a> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>new start pose </td></tr>
+    <tr><td class="paramname">target</td><td>new target pose </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>error code </dd></dl>
+
+<p>Definition at line <a class="el" href="path__planner_8cpp_source.html#l00060">60</a> of file <a class="el" href="path__planner_8cpp_source.html">path_planner.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ab29e2efd7d0caedc664298f21bb6db30">setPose2d</a>( &amp;(this-&gt;<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>), <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>-&gt;x, <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>-&gt;y, <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>-&gt;theta);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ab29e2efd7d0caedc664298f21bb6db30">setPose2d</a>( &amp;(this-&gt;<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a>), <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a>-&gt;x, <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a>-&gt;y, <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a>-&gt;theta);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#abe2ddd1d2706cc31cc9f86e19feb65a5">tfFrameFromPoseStamped</a>(&amp;(this-&gt;<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">start</a>), &amp;<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a73babbb1986d48a012f1cd5b0e29558f">start_tf</a>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#abe2ddd1d2706cc31cc9f86e19feb65a5">tfFrameFromPoseStamped</a>(&amp;(this-&gt;<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">target</a>), &amp;<a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#aab6db71e3a6bca127ec306fdd1432e8d">target_tf</a>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2650f7a41104ba861aa6832702fa7e13">current_path</a>.poses.clear();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#af1413741a460ed432129d3d22360c7a0">getPath</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ad178f32729c22cab5dfcfa8b0d2920a3">sendPath</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_ad178f32729c22cab5dfcfa8b0d2920a3"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ad178f32729c22cab5dfcfa8b0d2920a3">plugin_demo_interface_namespace::PathPlanner::sendPath</a></div><div class="ttdeci">void sendPath()</div><div class="ttdoc">publish current_path and the start_tf and target_tf frames </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8cpp_source.html#l00136">path_planner.cpp:136</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_abe2ddd1d2706cc31cc9f86e19feb65a5"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#abe2ddd1d2706cc31cc9f86e19feb65a5">plugin_demo_interface_namespace::PathPlanner::tfFrameFromPoseStamped</a></div><div class="ttdeci">void tfFrameFromPoseStamped(geometry_msgs::PoseStamped *pose, tf::Transform *tf_tf)</div><div class="ttdoc">build a tf-frame for a given pose </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8cpp_source.html#l00100">path_planner.cpp:100</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_a73babbb1986d48a012f1cd5b0e29558f"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a73babbb1986d48a012f1cd5b0e29558f">plugin_demo_interface_namespace::PathPlanner::start_tf</a></div><div class="ttdeci">tf::Transform start_tf</div><div class="ttdoc">the start tf-frame </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00030">path_planner.hpp:30</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_acb9a5eb14998f0c0852e9e714da48257"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#acb9a5eb14998f0c0852e9e714da48257">plugin_demo_interface_namespace::PathPlanner::target</a></div><div class="ttdeci">geometry_msgs::PoseStamped target</div><div class="ttdoc">last pose of the path </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00057">path_planner.hpp:57</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_a2650f7a41104ba861aa6832702fa7e13"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2650f7a41104ba861aa6832702fa7e13">plugin_demo_interface_namespace::PathPlanner::current_path</a></div><div class="ttdeci">nav_msgs::Path current_path</div><div class="ttdoc">contain the path </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00058">path_planner.hpp:58</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_aab6db71e3a6bca127ec306fdd1432e8d"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#aab6db71e3a6bca127ec306fdd1432e8d">plugin_demo_interface_namespace::PathPlanner::target_tf</a></div><div class="ttdeci">tf::Transform target_tf</div><div class="ttdoc">the target tf-frame </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00031">path_planner.hpp:31</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_af1413741a460ed432129d3d22360c7a0"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#af1413741a460ed432129d3d22360c7a0">plugin_demo_interface_namespace::PathPlanner::getPath</a></div><div class="ttdeci">virtual int getPath()=0</div><div class="ttdoc">calculate current_path from start and target inside a plugIn. </div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_ab29e2efd7d0caedc664298f21bb6db30"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#ab29e2efd7d0caedc664298f21bb6db30">plugin_demo_interface_namespace::PathPlanner::setPose2d</a></div><div class="ttdeci">void setPose2d(geometry_msgs::PoseStamped *pose3d, double x, double y, double theta)</div><div class="ttdoc">convert a given 2D-Pose into 3D-Stamped-Pose. </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8cpp_source.html#l00048">path_planner.cpp:48</a></div></div>
+<div class="ttc" id="classplugin__demo__interface__namespace_1_1PathPlanner_html_a2fb8dade4caee68e04b0f94b7c05992a"><div class="ttname"><a href="classplugin__demo__interface__namespace_1_1PathPlanner.html#a2fb8dade4caee68e04b0f94b7c05992a">plugin_demo_interface_namespace::PathPlanner::start</a></div><div class="ttdeci">geometry_msgs::PoseStamped start</div><div class="ttdoc">starting pose of the path </div><div class="ttdef"><b>Definition:</b> <a href="path__planner_8hpp_source.html#l00056">path_planner.hpp:56</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -459,7 +692,7 @@ tf::TransformBroadcaster&#160;</td><td class="memItemRight" valign="bottom"><a c
 </table>
 </div><div class="memdoc">
 
-<p>put a given 2D-Pose into 3D-Stamped-Pose. </p>
+<p>convert a given 2D-Pose into 3D-Stamped-Pose. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pose3d</td><td>pointer to the target variable </td></tr>
@@ -470,17 +703,59 @@ tf::TransformBroadcaster&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="path__planner_8cpp_source.html#l00043">43</a> of file <a class="el" href="path__planner_8cpp_source.html">path_planner.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        pose3d-&gt;header.stamp = ros::Time::now();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        pose3d-&gt;pose.position.x = x;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        pose3d-&gt;pose.position.y = y;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        pose3d-&gt;pose.position.z = 0;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        pose3d-&gt;pose.orientation.x = 0;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        pose3d-&gt;pose.orientation.y = 0;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        pose3d-&gt;pose.orientation.z = sin(theta * 0.5);          </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        pose3d-&gt;pose.orientation.w = cos(theta * 0.5);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<p>Definition at line <a class="el" href="path__planner_8cpp_source.html#l00048">48</a> of file <a class="el" href="path__planner_8cpp_source.html">path_planner.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        pose3d-&gt;header.stamp = ros::Time::now();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        pose3d-&gt;pose.position.x = x;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        pose3d-&gt;pose.position.y = y;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        pose3d-&gt;pose.position.z = 0;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        pose3d-&gt;pose.orientation.x = 0;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        pose3d-&gt;pose.orientation.y = 0;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        pose3d-&gt;pose.orientation.z = sin(theta * 0.5);          </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        pose3d-&gt;pose.orientation.w = cos(theta * 0.5);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="abe2ddd1d2706cc31cc9f86e19feb65a5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void plugin_demo_interface_namespace::PathPlanner::tfFrameFromPoseStamped </td>
+          <td>(</td>
+          <td class="paramtype">geometry_msgs::PoseStamped *&#160;</td>
+          <td class="paramname"><em>pose</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">tf::Transform *&#160;</td>
+          <td class="paramname"><em>tf_tf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>build a tf-frame for a given pose </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pose</td><td>the pose for the tf-frame </td></tr>
+    <tr><td class="paramname">tf_tf</td><td>the resulting tf-frame </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="path__planner_8cpp_source.html#l00100">100</a> of file <a class="el" href="path__planner_8cpp_source.html">path_planner.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        tf_tf-&gt;setOrigin( tf::Vector3(pose-&gt;pose.position.x, pose-&gt;pose.position.y, pose-&gt;pose.position.z) );</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        tf::Quaternion q(pose-&gt;pose.orientation.x, pose-&gt;pose.orientation.y, pose-&gt;pose.orientation.z, pose-&gt;pose.orientation.w);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        tf_tf-&gt;setRotation(q);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -505,7 +780,7 @@ tf::TransformBroadcaster&#160;</td><td class="memItemRight" valign="bottom"><a c
 
 <p>true if initialized. </p>
 
-<p>Definition at line <a class="el" href="path__planner_8hpp_source.html#l00047">47</a> of file <a class="el" href="path__planner_8hpp_source.html">path_planner.hpp</a>.</p>
+<p>Definition at line <a class="el" href="path__planner_8hpp_source.html#l00054">54</a> of file <a class="el" href="path__planner_8hpp_source.html">path_planner.hpp</a>.</p>
 
 </div>
 </div>
@@ -516,7 +791,7 @@ tf::TransformBroadcaster&#160;</td><td class="memItemRight" valign="bottom"><a c
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jun 24 2015 19:12:15 for ros_plugin_demo by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jun 30 2015 18:09:11 for ros_plugin_demo by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

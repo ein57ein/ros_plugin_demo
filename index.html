@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>ros_plugin_demo: Main Page</title>
+<title>ros_plugin_demo: Demonstration of the ROS PlugInLib</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -65,7 +65,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -76,13 +76,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="headertitle">
-<div class="title">ros_plugin_demo Documentation</div>  </div>
+<div class="title">Demonstration of the ROS PlugInLib </div>  </div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<div class="textblock"><p>The Source Code could be found on <a href="https://github.com/ein57ein/ros_plugin_demo">GitHub</a>.<br/>
+ This project is devided into three ROS-packages:</p>
+<ul>
+<li><b>plugin_demo_interface</b>: The <a class="el" href="classplugin__demo__interface__namespace_1_1PathPlanner.html">PlugIn-Interface </a> for this example</li>
+<li><b>plugin_demo_plugins</b>: Some PlugIns for this Interface (currently: <a class="el" href="classplugin__demo__plugins__namespace_1_1Direct.html">Direct </a> and <a class="el" href="classplugin__demo__plugins__namespace_1_1DirectOrtho.html">DirectOrtho</a>)</li>
+<li><b>plugin_demo_main</b>: An <a class="el" href="main_8cpp_source.html">executable</a>, which includes the Interface and load one of the PlugIns dynamically</li>
+</ul>
+<p>The <b>visual_aids</b> package include a <a class="el" href="pose__array__from__path_8cpp_source.html">tool </a> which helps to show the orientation of points from a path using a PoseArray.</p>
+<h1><a class="anchor" id="doxy_plugin_com"></a>
+The basic communication between the plugin_demo packages:</h1>
+ 
+    <div class="image">
+        <img src="communication.png" alt="basic communication structure" width="70%"/>
+    </div>
+<ul>
+<li>functions are marked with brackets <b>()</b> at the end</li>
+<li>a function which have a <b>"Callback"</b> in his name is assigned to a ROS::Subscriber</li>
+<li><b>setStartPub</b> is a ROS::Publisher</li>
+<li><b>rViz</b> is the ROS tool (is used for setting poses)</li>
+<li>a plugIn could also contain ROS::Subscribers or ROS::Publishers </li>
+</ul>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jun 24 2015 19:12:15 for ros_plugin_demo by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jun 30 2015 18:09:11 for ros_plugin_demo by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

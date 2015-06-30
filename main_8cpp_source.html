@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -179,27 +179,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    loadPlugin(&amp;plug_in_loader, &amp;roshandle, plugin_name);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    plugin_node-&gt;initialize(roshandle);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">while</span> (ros::ok())</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">if</span> (change_plugin) {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            geometry_msgs::Pose2D start, target;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            plugin_node-&gt;getPoints(&amp;start, &amp;target);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            loadPlugin(&amp;plug_in_loader, &amp;roshandle, plugin_name);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            plugin_node-&gt;setPoints(&amp;start, &amp;target);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            change_plugin = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        ros::spinOnce();</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    plugin_node.reset();</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    ros::Rate freq(8.0);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">while</span> (ros::ok())</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">if</span> (change_plugin) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            geometry_msgs::Pose2D start, target;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            plugin_node-&gt;getPoints(&amp;start, &amp;target);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            loadPlugin(&amp;plug_in_loader, &amp;roshandle, plugin_name);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            plugin_node-&gt;setPoints(&amp;start, &amp;target);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            change_plugin = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        ros::spinOnce();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        freq.sleep();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    plugin_node.reset();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
 <div class="ttc" id="path__planner_8hpp_html"><div class="ttname"><a href="path__planner_8hpp.html">path_planner.hpp</a></div><div class="ttdoc">Contain the Interface  class. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jun 24 2015 19:12:15 for ros_plugin_demo by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jun 30 2015 18:09:11 for ros_plugin_demo by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

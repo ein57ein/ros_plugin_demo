@@ -11,8 +11,9 @@ var indexSectionsWithContent =
   1: "dp",
   2: "p",
   3: "dp",
-  4: "dgops~",
-  5: "cgipst"
+  4: "dgiopst~",
+  5: "cgipst",
+  6: "d"
 };
 
 var indexSectionNames =
@@ -22,7 +23,8 @@ var indexSectionNames =
   2: "namespaces",
   3: "files",
   4: "functions",
-  5: "variables"
+  5: "variables",
+  6: "pages"
 };
 
 function convertToId(search)
