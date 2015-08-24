@@ -7,18 +7,3 @@
 #include <plugin_demo_plugins/direct.hpp>
 
 PLUGINLIB_EXPORT_CLASS(plugin_demo_plugins_namespace::Direct, plugin_demo_interface_namespace::PathPlanner)
-
-namespace plugin_demo_plugins_namespace
-{
-	int Direct::onInit(ros::NodeHandle roshandle)
-	{
-		ROS_INFO("[plugin direct] done init.");
-	}
-
-	int Direct::getPath()
-	{
-		current_path.poses.push_back(start);
-		current_path.poses.push_back(target);
-		ROS_INFO("[plugin direct] here comes the path");
-	}
-}

@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   plugin_demo_interface
   dynamic_reconfigure
+  nodelet
   #pluginlib
 )
 

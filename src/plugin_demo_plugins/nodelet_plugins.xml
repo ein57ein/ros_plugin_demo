@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<library path="lib/lib_direct_nodelet">
+  <class name="plugin_demo_plugins_namespace/DirectNodelet" type="plugin_demo_plugins_namespace::DirectNodelet" base_class_type="nodelet::Nodelet">
+	  <description>
+		direct example class as nodelet.
+	  </description>
+  </class>
+</library>
+
+<library path="lib/lib_direct_ortho_nodelet">
+  <class name="plugin_demo_plugins_namespace/DirectOrthoNodelet" type="plugin_demo_plugins_namespace::DirectOrthoNodelet" base_class_type="nodelet::Nodelet">
+	  <description>
+		direct_ortho example class as nodelet.
+	  </description>
+  </class>
+</library>

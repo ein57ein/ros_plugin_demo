@@ -17,7 +17,7 @@ namespace plugin_demo_interface_namespace
 			ROS_WARN("[interface] plugin was already initialized. Nothing will be done.");
 		} else {
 			getTargetSub = roshandle.subscribe("set_target", 10, &PathPlanner::getTargetCallback, this);
-			getStartSub = roshandle.subscribe("set_start", 10, &PathPlanner::getStarttCallback, this);
+			getStartSub = roshandle.subscribe("set_start", 10, &PathPlanner::getStartCallback, this);
 			pathPub = roshandle.advertise<nav_msgs::Path>("path", 10);
 			sendPathTimer = roshandle.createTimer(ros::Duration(2.0), &PathPlanner::sendPathCallback, this);
 
@@ -88,7 +88,6 @@ namespace plugin_demo_interface_namespace
 
 	double PathPlanner::getYawFromQuat(geometry_msgs::Quaternion quat)
 	{
-		//geometry_msgs::Quaternion quat = ;
 		tf::Quaternion q(quat.x, quat.y, quat.z, quat.w);
 		tf::Matrix3x3 m(q);
 		double roll, pitch, yaw;
@@ -104,7 +103,7 @@ namespace plugin_demo_interface_namespace
 		tf_tf->setRotation(q);
 	}
 
-	void PathPlanner::getStarttCallback(const geometry_msgs::Pose2D event)
+	void PathPlanner::getStartCallback(const geometry_msgs::Pose2D event)
 	{
 		setPose2d(&start, event.x, event.y, event.theta);
 

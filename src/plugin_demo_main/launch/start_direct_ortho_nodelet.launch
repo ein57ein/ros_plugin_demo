@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<launch>
+  <node pkg="nodelet" type="nodelet" name="standalone_nodelet"  args="manager" output="screen"/>
+
+  <node pkg="nodelet" type="nodelet" name="DirectOrthoNodelet" args="load plugin_demo_plugins_namespace/DirectOrthoNodelet standalone_nodelet" output="screen"/>
+
+  <node name="pose_array_from_path" pkg="visual_aids" type="pose_array_from_path" output="screen"/>
+
+</launch>

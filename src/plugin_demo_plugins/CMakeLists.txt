@@ -10,6 +10,7 @@ set(CMAKE_BUILD_TYPE Debug) #-g
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   plugin_demo_interface
+  nodelet
   #pluginlib
   #std_msgs
 )
@@ -109,6 +110,9 @@ include_directories(
 add_library(_direct src/direct.cpp)
 add_library(_direct_ortho src/direct_ortho.cpp)
 
+add_library(_direct_nodelet src/direct_nodelet.cpp)
+add_library(_direct_ortho_nodelet src/direct_ortho_nodelet.cpp)
+
 ## Declare a cpp executable
 # add_executable(plugin_demo_node src/plugin_demo_node.cpp)
 
@@ -122,6 +126,9 @@ add_library(_direct_ortho src/direct_ortho.cpp)
 # )
 target_link_libraries(_direct ${catkin_LIBRARIES} )
 target_link_libraries(_direct_ortho ${catkin_LIBRARIES} )
+
+target_link_libraries(_direct_nodelet ${catkin_LIBRARIES} )
+target_link_libraries(_direct_ortho_nodelet ${catkin_LIBRARIES} )
 
 #############
 ## Install ##

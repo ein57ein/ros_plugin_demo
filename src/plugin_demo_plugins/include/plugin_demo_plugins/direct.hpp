@@ -20,13 +20,19 @@ namespace plugin_demo_plugins_namespace
 		/** "calculate" the path.
 		 * @return error code
 		 **/
-		int getPath();
+		int getPath() {
+			current_path.poses.push_back(start);
+			current_path.poses.push_back(target);
+			ROS_INFO("[plugin direct] here comes the path");
+		}
 
 		/** writes only a info-msg.
 		 * @param roshandle a valid ROS NodeHandle
 		 * @return error code
 		 **/
-		int onInit(ros::NodeHandle roshandle);
+		int onInit(ros::NodeHandle roshandle) {
+			ROS_INFO("[plugin direct] done init.");
+		}
 		
 	public:
 		Direct() {}	/**< Intentionally left empty **/

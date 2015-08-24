@@ -20,13 +20,25 @@ namespace plugin_demo_plugins_namespace
 		/** calculate the third point of the resulting path.
 		 * @return error code
 		 **/
-		int getPath();
+		int getPath() {
+			current_path.poses.push_back(start);
+			
+			geometry_msgs::PoseStamped point;
+			double yaw = ( getYawFromQuat(start.pose.orientation) + getYawFromQuat(target.pose.orientation) ) / 2;
+			setPose2d(&point, start.pose.position.x, target.pose.position.y, yaw);
+			current_path.poses.push_back(point);
+			
+			current_path.poses.push_back(target);
+			ROS_INFO("[plugin direct_ortho] here comes the path");
+		}
 
 		/** writes only a info-msg.
 		 * @param roshandle a valid ROS NodeHandle
 		 * @return error code
 		 **/
-		int onInit(ros::NodeHandle roshandle);
+		int onInit(ros::NodeHandle roshandle) {
+			ROS_INFO("[plugin direct_ortho] done init.");
+		}
 		 
 	public:			
 		DirectOrtho() {}	/**< Intentionally left empty **/

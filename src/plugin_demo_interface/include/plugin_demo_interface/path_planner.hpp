@@ -44,7 +44,7 @@ namespace plugin_demo_interface_namespace
 		/**receives a new #start pose and call getPath().
 		 * @param event a pose message from the main part of this demo
 		 **/
-		void getStarttCallback(const geometry_msgs::Pose2D event);
+		void getStartCallback(const geometry_msgs::Pose2D event);
 
 		/**publish #current_path and the #start_tf and #target_tf frames
 		 **/
@@ -91,7 +91,7 @@ namespace plugin_demo_interface_namespace
 		 * @param quat a Quaternion
 		 * @return the yaw angle of the quaternion
 		 **/
-		double getYawFromQuat(geometry_msgs::Quaternion quat);
+		static double getYawFromQuat(geometry_msgs::Quaternion quat);
 
 		/**build a tf-frame for a given pose
 		 * @param pose the pose for the tf-frame

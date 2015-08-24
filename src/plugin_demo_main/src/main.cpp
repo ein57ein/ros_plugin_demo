@@ -1,13 +1,18 @@
 #include "plugin_demo_interface/path_planner.hpp"
+#include <nodelet/nodelet.h>
 #include <pluginlib/class_loader.h>
+
 #include "geometry_msgs/PoseWithCovarianceStamped.h"
 
 #include <dynamic_reconfigure/server.h>
 #include <plugin_demo_main/plugin_demoConfig.h>
 
 boost::shared_ptr<plugin_demo_interface_namespace::PathPlanner> plugin_node;
+boost::shared_ptr<nodelet::Nodelet> plugin_nodelet;
+bool change_plugin;
+
 std::string plugin_name;
-bool change_plugin, use_shared_pointer;
+bool use_shared_pointer;
 ros::Publisher setStartPub;
 double delta_x, delta_y, delta_theta;
 
@@ -18,7 +23,7 @@ void getStartCallback(const geometry_msgs::PoseWithCovarianceStamped event)
 		geometry_msgs::Pose2DPtr msg(new geometry_msgs::Pose2D);
 		msg->x = event.pose.pose.position.x;
 		msg->y = event.pose.pose.position.y;
-		msg->theta = plugin_node->getYawFromQuat(event.pose.pose.orientation);
+		msg->theta = plugin_demo_interface_namespace::PathPlanner::getYawFromQuat(event.pose.pose.orientation);
 		setStartPub.publish(msg);
 		msg->x += delta_x;
 		msg->y += delta_y;
@@ -27,12 +32,13 @@ void getStartCallback(const geometry_msgs::PoseWithCovarianceStamped event)
 		geometry_msgs::Pose2D msg;
 		msg.x = event.pose.pose.position.x;
 		msg.y = event.pose.pose.position.y;
-		msg.theta = plugin_node->getYawFromQuat(event.pose.pose.orientation);
+		msg.theta = plugin_demo_interface_namespace::PathPlanner::getYawFromQuat(event.pose.pose.orientation);
 		setStartPub.publish(msg);
 		msg.x += delta_x;
 		msg.y += delta_y;
 		msg.theta += delta_theta;
-	}	
+	}
+	
 }
 
 void reconfigureCallback(plugin_demo_main::plugin_demoConfig &config, uint32_t level)
@@ -55,6 +61,7 @@ int loadPlugin(pluginlib::ClassLoader<plugin_demo_interface_namespace::PathPlann
 	try
 	{
 		plugin_node.reset();
+		plugin_nodelet.reset();
 		plugin_node = plug_in_loader->createInstance(plugin_name.c_str());
 		plugin_node->initialize(*roshandle);		
 	} catch(pluginlib::PluginlibException& ex) {
@@ -62,6 +69,32 @@ int loadPlugin(pluginlib::ClassLoader<plugin_demo_interface_namespace::PathPlann
 		return 1;
 	}
 	ROS_INFO("[main] module loaded");
+	return 0;
+}
+
+int loadNodelet(pluginlib::ClassLoader<nodelet::Nodelet> *nodelet_loader, std::string nodelet_name)
+{
+	ROS_INFO("[main] starting nodelet \"%s\"", nodelet_name.c_str());
+	try
+	{
+		plugin_nodelet.reset();
+		plugin_node.reset();
+		plugin_nodelet = nodelet_loader->createInstance(nodelet_name.c_str());
+
+		ros::M_string remapping_args;
+		remapping_args["set_target"] = "/set_target";
+		remapping_args["set_start"] = "/set_start";
+		remapping_args["get_start"] = "/get_start";
+		remapping_args["path"] = "/path";
+		std::vector<std::string> my_argv;
+		my_argv.push_back("with_main");
+		plugin_nodelet->init(nodelet_name, remapping_args, my_argv);
+				
+	} catch(pluginlib::PluginlibException& ex) {
+		ROS_FATAL("[main] failed to load. Error: \"%s\"\nGoodbye.", ex.what());
+		return 1;
+	}
+	ROS_INFO("[main] nodelet-module loaded");
 	return 0;
 }
 
@@ -85,19 +118,31 @@ int main(int argc, char **argv)
 	change_plugin = false;
 	
 	pluginlib::ClassLoader<plugin_demo_interface_namespace::PathPlanner> plug_in_loader("plugin_demo_interface", "plugin_demo_interface_namespace::PathPlanner");
+	pluginlib::ClassLoader<nodelet::Nodelet> nodelet_loader("nodelet", "nodelet::Nodelet");
 
-	loadPlugin(&plug_in_loader, &roshandle, plugin_name);
-	plugin_node->initialize(roshandle);
+	if (plugin_name.rfind("Nodelet") == std::string::npos)
+	{
+		loadPlugin(&plug_in_loader, &roshandle, plugin_name);
+		plugin_node->initialize(roshandle);
+	} else {
+		loadNodelet(&nodelet_loader, plugin_name);
+	}	
 
 	ros::Rate freq(8.0);
 
 	while (ros::ok())
 	{
 		if (change_plugin) {
-			geometry_msgs::Pose2D start, target;
-			plugin_node->getPoints(&start, &target);
-			loadPlugin(&plug_in_loader, &roshandle, plugin_name);
-			plugin_node->setPoints(&start, &target);
+			if (plugin_name.rfind("Nodelet") == std::string::npos)
+			{
+				geometry_msgs::Pose2D start, target;
+				if ( plugin_node.unique() ) plugin_node->getPoints(&start, &target);
+				loadPlugin(&plug_in_loader, &roshandle, plugin_name);
+				if ( plugin_node.unique() ) plugin_node->setPoints(&start, &target);
+			} else {
+				//load & store e.g. as service, which is calling getPoints() and setPoints() inside the nodelet
+				loadNodelet(&nodelet_loader, plugin_name);
+			}
 			change_plugin = false;
 		}
 		ros::spinOnce();
@@ -105,6 +150,7 @@ int main(int argc, char **argv)
 	}
 
 	plugin_node.reset();
+	plugin_nodelet.reset();
 	
 	return 0;
 }
